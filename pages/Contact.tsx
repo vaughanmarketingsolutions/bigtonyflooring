@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
                         </li>
                         <li className="flex justify-between border-b border-stone-700 pb-2">
                             <span className="text-stone-500 uppercase">Saturday</span>
-                            <span className="text-white">8:00 AM - 2:00 PM</span>
+                            <span className="text-white">8:00 AM - 4:00 PM</span>
                         </li>
                         <li className="flex justify-between">
                             <span className="text-stone-500 uppercase">Sunday</span>
