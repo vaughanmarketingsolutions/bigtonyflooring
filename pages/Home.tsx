@@ -48,21 +48,8 @@ const Home: React.FC = () => {
           {/* Centered Flex Container */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 xl:gap-20 py-12 lg:py-0 max-w-7xl mx-auto">
             
-            {/* Column: Calculator Card - Left Aligned in the Center Block */}
-            <div className="w-full lg:w-[450px] shrink-0 order-2 lg:order-1">
-              <div className="bg-white rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] overflow-hidden border border-white/10">
-                <div className="bg-stone-50 border-b border-stone-100 p-8">
-                    <h2 className="text-3xl font-heading font-black text-stone-900 uppercase tracking-tight italic">Quote Calculator</h2>
-                    <p className="text-stone-500 text-[10px] font-black uppercase tracking-widest mt-1">Get an instant estimate for your project</p>
-                </div>
-                <div className="w-full min-h-[500px] relative bg-white">
-                    <Calculator />
-                </div>
-              </div>
-            </div>
-
-            {/* Column: Copy - Right Aligned in the Center Block */}
-            <div className="w-full lg:w-[500px] xl:w-[600px] text-center lg:text-left flex flex-col items-center lg:items-start order-1 lg:order-2">
+            {/* Column: Copy - Now on the LEFT for desktop */}
+            <div className="w-full lg:w-[500px] xl:w-[600px] text-center lg:text-left flex flex-col items-center lg:items-start order-1">
                 <div className="inline-flex items-center space-x-2 bg-[#014E86] text-white px-4 py-2 rounded-sm mb-8 text-xs font-bold uppercase tracking-[0.3em] shadow-xl">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                     <span>Wilmington's Elite Installers</span>
@@ -104,10 +91,23 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
+            {/* Column: Calculator Card - Now on the RIGHT for desktop */}
+            <div className="w-full lg:w-[450px] shrink-0 order-2">
+              <div className="bg-white rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] overflow-hidden border border-white/10">
+                <div className="bg-stone-50 border-b border-stone-100 p-8">
+                    <h2 className="text-3xl font-heading font-black text-stone-900 uppercase tracking-tight italic">Quote Calculator</h2>
+                    <p className="text-stone-500 text-[10px] font-black uppercase tracking-widest mt-1">Get an instant estimate for your project</p>
+                </div>
+                <div className="w-full min-h-[500px] relative bg-white">
+                    <Calculator />
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
         
-        <div className="absolute bottom-0 right-0 w-1/3 h-full bg-[#014E86]/5 -skew-x-12 transform translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-full bg-[#014E86]/5 skew-x-12 transform -translate-x-1/2 pointer-events-none"></div>
       </section>
 
       {/* QUICK TRUST BAR */}
