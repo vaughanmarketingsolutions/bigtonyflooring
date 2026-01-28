@@ -38,7 +38,7 @@ const Services: React.FC = () => {
               {/* Content Side */}
               <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center space-x-3 mb-4">
-                    <service.icon className="w-8 h-8 text-red-700" />
+                    <service.icon className="w-8 h-8 text-[#014E86]" />
                     <span className="text-stone-500 font-bold tracking-widest text-sm uppercase">Professional Install</span>
                 </div>
                 
@@ -59,11 +59,7 @@ const Services: React.FC = () => {
                     </ul>
                 </div>
 
-                <div className="flex items-center justify-between border-t border-stone-100 pt-6 mt-auto">
-                    <div>
-                        <span className="block text-xs text-stone-500 uppercase font-bold">Price Range</span>
-                        <span className="text-2xl font-bold text-red-700">{service.priceRange}</span>
-                    </div>
+                <div className="flex items-center justify-end border-t border-stone-100 pt-6 mt-auto">
                     <Link to="/contact">
                         <Button variant="outline" size="sm" className="group">
                             Get Quote <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -78,9 +74,9 @@ const Services: React.FC = () => {
       
       {/* Bottom CTA */}
       <div className="container mx-auto px-4 mt-20 text-center">
-        <h3 className="text-2xl font-bold mb-6">Need something custom? Removal? Repairs?</h3>
+        <h3 className="text-2xl font-bold mb-6 text-stone-800">Need something custom? Removal? Repairs?</h3>
         <p className="text-stone-600 mb-8">We also handle floor leveling, subfloor repair, and baseboard installation.</p>
-        <Link to="/contact"><Button>Talk to Tony</Button></Link>
+        <Link to="/contact"><Button>Talk to the team</Button></Link>
       </div>
     </div>
   );

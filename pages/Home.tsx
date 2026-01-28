@@ -1,99 +1,165 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ShieldCheck, Clock, BadgeDollarSign, MapPin, ArrowRight } from 'lucide-react';
 import Button from '../components/ui/Button';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import Calculator from '../components/Calculator';
-import { SERVICES, TESTIMONIALS, PHONE_NUMBER } from '../constants';
+import { SERVICES, TESTIMONIALS, PHONE_NUMBER, GALLERY_IMAGES, BRAND_NAME } from '../constants';
 
 const Home: React.FC = () => {
+  // Reorder images to start with a high-impact shot (Image 9)
+  const heroImages = [
+    GALLERY_IMAGES[8].image,
+    GALLERY_IMAGES[0].image,
+    GALLERY_IMAGES[2].image,
+    GALLERY_IMAGES[4].image,
+    GALLERY_IMAGES[6].image,
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
   return (
     <div className="flex flex-col w-full">
       
-      {/* HERO SECTION */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 bg-stone-900">
-            <img 
-                src="https://picsum.photos/id/401/1600/900" 
-                alt="Flooring Installation" 
-                className="w-full h-full object-cover opacity-50 mix-blend-overlay"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/80 to-transparent"></div>
+      {/* HERO SECTION - Tighter padding, high impact */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black pt-12 pb-16 lg:pt-0 lg:pb-0">
+        {/* Animated Background Slider */}
+        <div className="absolute inset-0">
+            {heroImages.map((img, index) => (
+                <img 
+                    key={img}
+                    src={img} 
+                    alt={`Flooring Excellence ${index + 1}`} 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        index === currentImageIndex ? 'opacity-70' : 'opacity-0'
+                    }`}
+                />
+            ))}
+            {/* Rich gradient for text clarity */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent hidden lg:block"></div>
+            <div className="absolute inset-0 bg-black/60 lg:hidden"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 pt-20">
-          <div className="max-w-2xl text-white">
-            <div className="inline-block bg-red-700 px-3 py-1 mb-4 text-sm font-bold uppercase tracking-widest transform -skew-x-12">
-                <span className="skew-x-12 block">Wilmington's Best Installer</span>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            
+            {/* Left Column: Content */}
+            <div className="text-white lg:col-span-7 xl:col-span-7 order-1 flex flex-col justify-center">
+                <div className="inline-block self-start bg-[#014E86] px-4 py-1.5 mb-5 text-sm font-bold uppercase tracking-widest transform -skew-x-12 shadow-lg">
+                    <span className="skew-x-12 block">Wilmington's Premier Installers</span>
+                </div>
+                <h1 className="text-5xl md:text-7xl xl:text-8xl font-heading font-bold leading-[0.85] mb-5 drop-shadow-2xl">
+                  Floors Installed <br/>
+                  <span className="text-[#014E86]">Right.</span>
+                </h1>
+                <p className="text-xl md:text-2xl xl:text-2xl text-stone-100 mb-7 max-w-xl leading-relaxed font-medium drop-shadow-md">
+                  {BRAND_NAME} brings craftsmanship, speed, and honest pricing to every job. No hidden fees. No nonsense. Just damn good floors.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <Link to="/contact">
+                    <Button size="lg" className="px-10 py-4 text-base">View All Services</Button>
+                  </Link>
+                  <a href={`tel:${PHONE_NUMBER}`}>
+                    <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-stone-900 px-10 py-4 text-base bg-black/20 backdrop-blur-sm">
+                        Call Now
+                    </Button>
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2 text-white/90 text-sm font-bold uppercase tracking-widest drop-shadow">
+                    <div className="flex space-x-1 mr-3">
+                      <Star className="w-5 h-5 text-amber-400 fill-current" />
+                      <Star className="w-5 h-5 text-amber-400 fill-current" />
+                      <Star className="w-5 h-5 text-amber-400 fill-current" />
+                      <Star className="w-5 h-5 text-amber-400 fill-current" />
+                      <Star className="w-5 h-5 text-amber-400 fill-current" />
+                    </div>
+                    <span className="text-sm">5.0 Rated local expert</span>
+                </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
-              Floors Installed <span className="text-red-600">Right.</span><br/>
-              Every Time.
-            </h1>
-            <p className="text-xl text-stone-300 mb-8 max-w-lg leading-relaxed">
-              Big Tony brings craftsmanship, speed, and honest pricing to every job. No hidden fees. No nonsense. Just damn good floors.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
-                <Button size="xl">Get a Free Estimate</Button>
-              </Link>
-              <a href={`tel:${PHONE_NUMBER}`}>
-                <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-stone-900">
-                    Call Big Tony Now
-                </Button>
-              </a>
+
+            {/* Right Column: Lead Form (Slightly smaller, cleaner fit) */}
+            <div className="lg:col-span-5 xl:col-span-5 order-2 flex justify-center lg:justify-end">
+              <div className="w-full max-w-[380px] bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden h-[730px] transition-all duration-300 border border-stone-200">
+                <div className="w-full h-full relative overflow-hidden">
+                    <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/uW5o4MLb4KvadHnnyfuU"
+                        style={{ 
+                            width: '107.5%', 
+                            height: '107.5%', 
+                            border: 'none',
+                            transform: 'scale(0.93)',
+                            transformOrigin: 'top left',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0
+                        }}
+                        id="inline-uW5o4MLb4KvadHnnyfuU" 
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Form 0"
+                        data-height="730"
+                        data-layout-iframe-id="inline-uW5o4MLb4KvadHnnyfuU"
+                        data-form-id="uW5o4MLb4KvadHnnyfuU"
+                        title="Form 0"
+                    >
+                    </iframe>
+                </div>
+              </div>
             </div>
-            <div className="mt-8 flex items-center space-x-2 text-stone-400 text-sm font-medium">
-                <Star className="w-5 h-5 text-amber-400 fill-current" />
-                <Star className="w-5 h-5 text-amber-400 fill-current" />
-                <Star className="w-5 h-5 text-amber-400 fill-current" />
-                <Star className="w-5 h-5 text-amber-400 fill-current" />
-                <Star className="w-5 h-5 text-amber-400 fill-current" />
-                <span className="ml-2 text-white">5.0 Rating based on 100+ local jobs</span>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* TRUST BOOSTERS */}
-      <section className="bg-white py-12 border-b border-stone-200 -mt-10 relative z-20 container mx-auto rounded shadow-lg hidden md:block">
-        <div className="grid grid-cols-4 gap-8 px-8">
-            <div className="flex items-center space-x-4">
-                <div className="bg-stone-100 p-3 rounded-full"><ShieldCheck className="w-8 h-8 text-red-700" /></div>
-                <div><h3 className="font-bold font-heading">Licensed & Insured</h3><p className="text-sm text-stone-500">Fully protected.</p></div>
+      {/* TRUST BOOSTERS - Overlap hero slightly */}
+      <section className="bg-white py-12 border-b border-stone-200 -mt-16 relative z-20 container mx-auto rounded-lg shadow-2xl hidden lg:block">
+        <div className="grid grid-cols-4 gap-8 px-12">
+            <div className="flex items-center space-x-5">
+                <div className="bg-stone-100 p-4 rounded-full"><ShieldCheck className="w-8 h-8 text-[#014E86]" /></div>
+                <div><h3 className="font-bold font-heading text-lg">Licensed & Insured</h3><p className="text-sm text-stone-500">Fully protected.</p></div>
             </div>
-            <div className="flex items-center space-x-4">
-                <div className="bg-stone-100 p-3 rounded-full"><Star className="w-8 h-8 text-red-700" /></div>
-                <div><h3 className="font-bold font-heading">Est. 2018</h3><p className="text-sm text-stone-500">Years of trust.</p></div>
+            <div className="flex items-center space-x-5">
+                <div className="bg-stone-100 p-4 rounded-full"><Star className="w-8 h-8 text-[#014E86]" /></div>
+                <div><h3 className="font-bold font-heading text-lg">Local Experts</h3><p className="text-sm text-stone-500">Years of trust.</p></div>
             </div>
-            <div className="flex items-center space-x-4">
-                <div className="bg-stone-100 p-3 rounded-full"><BadgeDollarSign className="w-8 h-8 text-red-700" /></div>
-                <div><h3 className="font-bold font-heading">Transparent Pricing</h3><p className="text-sm text-stone-500">No surprise bills.</p></div>
+            <div className="flex items-center space-x-5">
+                <div className="bg-stone-100 p-4 rounded-full"><BadgeDollarSign className="w-8 h-8 text-[#014E86]" /></div>
+                <div><h3 className="font-bold font-heading text-lg">Transparent Pricing</h3><p className="text-sm text-stone-500">No surprise bills.</p></div>
             </div>
-             <div className="flex items-center space-x-4">
-                <div className="bg-stone-100 p-3 rounded-full"><Clock className="w-8 h-8 text-red-700" /></div>
-                <div><h3 className="font-bold font-heading">Fast Turnaround</h3><p className="text-sm text-stone-500">Done in days, not weeks.</p></div>
+             <div className="flex items-center space-x-5">
+                <div className="bg-stone-100 p-4 rounded-full"><Clock className="w-8 h-8 text-[#014E86]" /></div>
+                <div><h3 className="font-bold font-heading text-lg">Fast Turnaround</h3><p className="text-sm text-stone-500">Done in days, not weeks.</p></div>
             </div>
         </div>
       </section>
 
       {/* SERVICES STRIP */}
-      <section className="py-20 bg-stone-50">
+      <section className="py-24 bg-stone-50">
         <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-heading font-bold text-stone-900 mb-4">What We Do Best</h2>
-                <div className="w-24 h-1 bg-red-700 mx-auto"></div>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-stone-900 mb-4 uppercase tracking-tighter">Professional Services</h2>
+                <div className="w-24 h-2 bg-[#014E86] mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {SERVICES.map((service) => (
-                    <div key={service.id} className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow border-t-4 border-transparent hover:border-red-700 group cursor-pointer">
-                        <service.icon className="w-12 h-12 text-stone-400 group-hover:text-red-700 mb-4 transition-colors" />
-                        <h3 className="font-bold font-heading text-lg mb-2">{service.title}</h3>
-                        <p className="text-sm text-stone-500 mb-4">{service.shortDesc}</p>
-                        <Link to="/services" className="text-red-700 font-bold text-sm flex items-center group-hover:underline">
-                            Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                    <div key={service.id} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border-t-8 border-transparent hover:border-[#014E86] group cursor-pointer flex flex-col">
+                        <service.icon className="w-14 h-14 text-stone-300 group-hover:text-[#014E86] mb-6 transition-colors" />
+                        <h3 className="font-bold font-heading text-2xl mb-3">{service.title}</h3>
+                        <p className="text-stone-500 mb-6 leading-relaxed flex-grow">{service.shortDesc}</p>
+                        <Link to="/services" className="text-[#014E86] font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform">
+                            VIEW DETAILS <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </div>
                 ))}
@@ -101,70 +167,43 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* FEATURE: BEFORE & AFTER */}
-      <section className="py-20 bg-stone-900 text-white clip-path-slant">
-        <div className="container mx-auto px-4 pb-20 pt-10">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-10">
-                <div className="max-w-xl">
-                    <h2 className="text-4xl font-heading font-bold mb-4">The Big Tony Transformation</h2>
-                    <p className="text-stone-400 text-lg">Don't just take our word for it. Slide to see how we turn tired, old floors into showroom-quality spaces.</p>
-                </div>
-                <Link to="/gallery" className="hidden md:block">
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">View Full Gallery</Button>
-                </Link>
+      {/* TESTIMONIALS SECTION */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-stone-900 mb-4">What Our Clients Say</h2>
+                <div className="w-24 h-2 bg-[#014E86] mx-auto mb-8"></div>
+                <p className="text-stone-600 max-w-2xl mx-auto text-lg">We take pride in our reputation. Here is what local homeowners in Wilmington and beyond have to say about working with {BRAND_NAME}.</p>
             </div>
             
-            <BeforeAfterSlider />
-
-            <div className="mt-10 text-center md:hidden">
-                 <Link to="/gallery">
-                    <Button variant="outline" className="border-white text-white">View Full Gallery</Button>
-                </Link>
-            </div>
-        </div>
-      </section>
-
-      {/* CALCULATOR & TESTIMONIALS SPLIT */}
-      <section className="py-20 bg-stone-50">
-        <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
-                {/* Testimonials */}
-                <div>
-                    <h2 className="text-3xl font-heading font-bold text-stone-900 mb-8">What The Neighborhood Says</h2>
-                    <div className="space-y-6">
-                        {TESTIMONIALS.map((t) => (
-                            <div key={t.id} className="bg-white p-6 rounded shadow-sm border-l-4 border-amber-400">
-                                <div className="flex text-amber-400 mb-2">
-                                    {[...Array(t.stars)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                                </div>
-                                <p className="text-stone-700 italic mb-4">"{t.text}"</p>
-                                <div className="flex justify-between items-center text-sm">
-                                    <span className="font-bold text-stone-900">{t.name}</span>
-                                    <span className="text-stone-500">{t.location}</span>
-                                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {TESTIMONIALS.map((t) => (
+                    <div key={t.id} className="bg-stone-50 p-10 rounded-xl shadow-lg border-t-8 border-[#014E86] flex flex-col h-full hover:scale-[1.02] transition-transform">
+                        <div className="flex text-amber-400 mb-6">
+                            {[...Array(t.stars)].map((_, i) => <Star key={i} className="w-6 h-6 fill-current" />)}
+                        </div>
+                        <p className="text-stone-700 italic mb-10 flex-grow text-lg leading-relaxed">"{t.text}"</p>
+                        <div className="pt-8 border-t border-stone-200 flex items-center">
+                            <div className="w-12 h-12 bg-[#014E86] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 uppercase">
+                              {t.name.charAt(0)}
                             </div>
-                        ))}
+                            <div>
+                              <span className="block font-bold text-stone-900 text-xl">{t.name}</span>
+                              <span className="text-[#014E86] font-bold text-xs uppercase tracking-tighter">{t.location}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="mt-8">
-                         <p className="font-heading font-bold text-xl text-stone-400 uppercase">Trust the guys who do it right.</p>
-                    </div>
-                </div>
-
-                {/* Calculator */}
-                <div className="lg:sticky lg:top-24">
-                     <Calculator />
-                </div>
+                ))}
             </div>
         </div>
       </section>
 
       {/* SERVICE AREA MAP */}
-      <section className="bg-stone-200 relative py-12 md:py-20">
+      <section className="bg-stone-100 relative py-12 md:py-24">
           <div className="container mx-auto px-4">
-             <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+             <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
                  {/* Map Container */}
-                 <div className="w-full max-w-4xl h-[400px] shadow-2xl rounded-xl overflow-hidden relative border-4 border-white">
+                 <div className="w-full max-w-5xl h-[500px] shadow-2xl rounded-2xl overflow-hidden relative border-8 border-white">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33727.70452136164!2d-77.94807785!3d34.2257284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89a9808e74e6a9b3%3A0x85beca85f3afec11!2sWilmington%2C%20NC!5e0!3m2!1sen!2sus!4v1700000000000"
                         width="100%"
@@ -176,13 +215,13 @@ const Home: React.FC = () => {
                         title="Service Area Map"
                     ></iframe>
                      {/* Floating Info Box */}
-                     <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 md:p-6 shadow-xl rounded max-w-xs md:max-w-sm border-l-4 border-red-700">
-                        <h4 className="font-bold font-heading text-lg mb-2 flex items-center">
-                            <MapPin className="w-5 h-5 mr-2 text-red-700" />
-                            Tri-State Service Area
+                     <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-6 md:p-8 shadow-2xl rounded-xl max-w-xs md:max-w-md border-l-8 border-[#014E86]">
+                        <h4 className="font-bold font-heading text-2xl mb-3 flex items-center text-stone-900">
+                            <MapPin className="w-6 h-6 mr-3 text-[#014E86]" />
+                            Where We Work
                         </h4>
-                        <p className="text-sm text-stone-600 font-medium">Based in Wilmington, NC.</p>
-                        <p className="text-sm text-stone-600">Proudly serving North Carolina, South Carolina, and Virginia.</p>
+                        <p className="text-lg text-stone-700 font-bold mb-2">Based in Wilmington, NC.</p>
+                        <p className="text-stone-600">Proudly serving the entire region, including North Carolina, South Carolina, and Virginia.</p>
                     </div>
                  </div>
              </div>
@@ -190,16 +229,18 @@ const Home: React.FC = () => {
       </section>
 
       {/* CONVERSION PANEL */}
-      <section className="bg-red-700 py-20 text-center px-4">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Your Floors Deserve Big Tony Quality.</h2>
-        <p className="text-red-100 text-xl mb-10 max-w-2xl mx-auto">Don't settle for cheap installs that peel up in a year. Get it done right the first time.</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-             <Link to="/contact">
-                <Button size="xl" variant="secondary">Get My Free Quote</Button>
-            </Link>
-            <a href={`tel:${PHONE_NUMBER}`}>
-                <Button size="xl" variant="accent">Call {PHONE_NUMBER}</Button>
-            </a>
+      <section className="bg-[#014E86] py-28 text-center px-4">
+        <div className="container mx-auto">
+          <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 drop-shadow-xl uppercase tracking-tighter leading-tight">Your Floors Deserve <br/> the {BRAND_NAME} Touch.</h2>
+          <p className="text-blue-100 text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">Don't settle for cheap installs that peel up in a year. Get it done right the first time.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-8">
+               <Link to="/contact">
+                  <Button size="xl" variant="secondary" className="px-12 py-6 text-xl shadow-2xl">Get My Free Quote</Button>
+              </Link>
+              <a href={`tel:${PHONE_NUMBER}`}>
+                  <Button size="xl" variant="accent" className="px-12 py-6 text-xl shadow-2xl bg-stone-900 border border-white/20">Call {PHONE_NUMBER}</Button>
+              </a>
+          </div>
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-import { NAV_ITEMS, PHONE_NUMBER, LOGO_URL } from '../constants';
+import { NAV_ITEMS, PHONE_NUMBER, LOGO_URL, BRAND_NAME } from '../constants';
 import Button from './ui/Button';
 
 const Navbar: React.FC = () => {
@@ -19,13 +19,9 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center py-1 group" onClick={closeMenu}>
             <img 
               src={LOGO_URL} 
-              alt="Big Tony's Flooring" 
+              alt={BRAND_NAME} 
               className="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
-            <div className="ml-3 flex flex-col justify-center">
-              <span className="font-heading font-bold text-2xl md:text-3xl leading-none text-red-700 uppercase italic">Big Tony's</span>
-              <span className="font-heading font-bold text-lg md:text-xl leading-none text-stone-900 uppercase tracking-widest">Flooring</span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -36,7 +32,7 @@ const Navbar: React.FC = () => {
                   key={item.path}
                   to={item.path}
                   className={`text-sm font-bold uppercase tracking-wide transition-colors ${
-                    location.pathname === item.path ? 'text-red-700' : 'text-stone-600 hover:text-stone-900'
+                    location.pathname === item.path ? 'text-[#014E86]' : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
                   {item.label}
@@ -44,7 +40,7 @@ const Navbar: React.FC = () => {
               ))}
             </div>
             <div className="flex items-center space-x-4">
-              <a href={`tel:${PHONE_NUMBER}`} className="flex items-center text-stone-900 font-bold hover:text-red-700 transition-colors">
+              <a href={`tel:${PHONE_NUMBER}`} className="flex items-center text-stone-900 font-bold hover:text-[#014E86] transition-colors">
                 <Phone className="w-4 h-4 mr-2" />
                 {PHONE_NUMBER}
               </a>
@@ -73,7 +69,7 @@ const Navbar: React.FC = () => {
                 to={item.path}
                 onClick={closeMenu}
                 className={`text-lg font-bold uppercase ${
-                  location.pathname === item.path ? 'text-red-700' : 'text-stone-700'
+                  location.pathname === item.path ? 'text-[#014E86]' : 'text-stone-700'
                 }`}
               >
                 {item.label}

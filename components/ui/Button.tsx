@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = "inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none rounded-sm shadow-md";
   
   const variants = {
-    primary: "bg-red-700 text-white hover:bg-red-800 shadow-red-900/20",
+    primary: "bg-[#014E86] text-white hover:bg-[#003d6a] shadow-blue-900/20",
     accent: "bg-stone-800 text-white hover:bg-black shadow-stone-900/20",
     secondary: "bg-amber-400 text-stone-900 hover:bg-amber-500 shadow-amber-900/20",
     outline: "border-2 border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white",

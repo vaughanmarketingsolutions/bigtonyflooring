@@ -22,9 +22,9 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-xl border-t-8 border-red-700">
+    <div className="bg-white p-8 rounded-lg shadow-xl border-t-8 border-[#014E86]">
       <h3 className="text-2xl font-heading font-bold mb-4 text-stone-900">Quick Quote Calculator</h3>
-      <p className="text-stone-600 mb-6 text-sm">Get a rough idea of your project cost. For an exact price, call Tony!</p>
+      <p className="text-stone-600 mb-6 text-sm">Get a rough idea of your project cost. For an exact price, call 421 Floors!</p>
       
       <div className="space-y-4">
         <div>
@@ -33,7 +33,7 @@ const Calculator: React.FC = () => {
             type="number" 
             value={sqFt}
             onChange={(e) => setSqFt(Number(e.target.value))}
-            className="w-full p-3 border-2 border-stone-200 rounded focus:border-red-700 focus:outline-none bg-stone-50"
+            className="w-full p-3 border-2 border-stone-200 rounded focus:border-[#014E86] focus:outline-none bg-stone-50"
             placeholder="e.g. 200"
           />
         </div>
@@ -43,7 +43,7 @@ const Calculator: React.FC = () => {
           <select 
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full p-3 border-2 border-stone-200 rounded focus:border-red-700 focus:outline-none bg-stone-50"
+            className="w-full p-3 border-2 border-stone-200 rounded focus:border-[#014E86] focus:outline-none bg-stone-50"
           >
             <option value="lvp">LVP (Vinyl Plank)</option>
             <option value="lvt">LVT (Vinyl Tile)</option>
@@ -59,7 +59,7 @@ const Calculator: React.FC = () => {
         {estimate && (
           <div className="mt-4 p-4 bg-stone-100 rounded text-center animate-in fade-in slide-in-from-bottom-2">
             <p className="text-xs text-stone-500 uppercase tracking-widest font-bold">Estimated Cost</p>
-            <p className="text-3xl font-heading font-bold text-red-700">~{estimate}</p>
+            <p className="text-3xl font-heading font-bold text-[#014E86]">~{estimate}</p>
             <p className="text-xs text-stone-500 mt-1">*Materials & Labor included. Rough estimate.</p>
           </div>
         )}

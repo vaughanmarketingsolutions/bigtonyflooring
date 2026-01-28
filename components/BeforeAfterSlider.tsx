@@ -58,12 +58,12 @@ const BeforeAfterSlider: React.FC = () => {
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center overflow-hidden border-r-2 border-white"
           style={{ 
-            backgroundImage: `url('https://picsum.photos/id/345/1000/800')`, // Grayscale or older looking room
+            backgroundImage: `url('https://picsum.photos/id/345/1000/800')`,
             width: `${sliderPosition}%`,
             filter: 'grayscale(60%) sepia(20%)'
           }}
         >
-             <div className="absolute top-4 left-4 bg-red-700/80 text-white px-3 py-1 text-sm font-bold uppercase rounded">
+             <div className="absolute top-4 left-4 bg-[#014E86]/80 text-white px-3 py-1 text-sm font-bold uppercase rounded">
                 Before
             </div>
         </div>
@@ -73,7 +73,7 @@ const BeforeAfterSlider: React.FC = () => {
           className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize flex items-center justify-center"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center shadow-lg border-2 border-white -ml-[18px]">
+          <div className="w-10 h-10 bg-[#014E86] rounded-full flex items-center justify-center shadow-lg border-2 border-white -ml-[18px]">
             <MoveHorizontal className="text-white w-6 h-6" />
           </div>
         </div>
