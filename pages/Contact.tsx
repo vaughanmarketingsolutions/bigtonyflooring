@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4 -mt-10 pb-20">
         <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col lg:flex-row">
             
-            {/* Form Section - Replaced with the LeadConnector Iframe */}
+            {/* Form Section - Replaced with the specific LeadConnector Iframe snippet */}
             <div className="lg:w-2/3 p-0 bg-white flex flex-col">
                 <div className="p-8 md:p-12 pb-4">
                   <h2 className="text-2xl font-heading font-bold text-stone-800">Request a Free Estimate</h2>
@@ -31,10 +31,21 @@ const Contact: React.FC = () => {
                           width: '100%', 
                           height: '100%', 
                           border: 'none',
+                          borderRadius: '3px'
                       }}
-                      id="contact-page-lead-form" 
+                      id="inline-uW5o4MLb4KvadHnnyfuU" 
                       data-layout="{'id':'INLINE'}"
-                      title="Contact Form"
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name="Form 0"
+                      data-height="670"
+                      data-layout-iframe-id="inline-uW5o4MLb4KvadHnnyfuU"
+                      data-form-id="uW5o4MLb4KvadHnnyfuU"
+                      title="Form 0"
                   >
                   </iframe>
                 </div>

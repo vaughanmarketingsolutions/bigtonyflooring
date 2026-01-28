@@ -83,7 +83,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
-            {/* Right Column: Lead Form (Compact and professional) */}
+            {/* Right Column: Lead Form (Updated with provided snippet) */}
             <div className="lg:col-span-5 xl:col-span-4 order-2 flex justify-center lg:justify-end">
               <div className="w-full max-w-[380px] bg-white rounded-xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden h-[700px] border border-white/20 transition-transform duration-500 hover:scale-[1.01]">
                 <div className="w-full h-full relative">
@@ -93,6 +93,7 @@ const Home: React.FC = () => {
                             width: '111%', 
                             height: '111%', 
                             border: 'none',
+                            borderRadius: '3px',
                             transform: 'scale(0.9)',
                             transformOrigin: 'top left',
                             position: 'absolute',
@@ -101,7 +102,17 @@ const Home: React.FC = () => {
                         }}
                         id="inline-uW5o4MLb4KvadHnnyfuU" 
                         data-layout="{'id':'INLINE'}"
-                        title="Contact Form"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Form 0"
+                        data-height="670"
+                        data-layout-iframe-id="inline-uW5o4MLb4KvadHnnyfuU"
+                        data-form-id="uW5o4MLb4KvadHnnyfuU"
+                        title="Form 0"
                     >
                     </iframe>
                 </div>
