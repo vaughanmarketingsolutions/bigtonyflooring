@@ -47,8 +47,21 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-12 lg:gap-16 xl:gap-24 py-12 lg:py-0">
             
-            {/* Left Column */}
-            <div className="w-full lg:w-[55%] text-center lg:text-left flex flex-col items-center lg:items-start">
+            {/* Column: Calculator Card - Now on the LEFT for desktop */}
+            <div className="w-full lg:w-[450px] shrink-0 order-2 lg:order-1">
+              <div className="bg-white rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] overflow-hidden border border-white/10">
+                <div className="bg-stone-50 border-b border-stone-100 p-8">
+                    <h2 className="text-3xl font-heading font-black text-stone-900 uppercase tracking-tight italic">Quote Calculator</h2>
+                    <p className="text-stone-500 text-[10px] font-black uppercase tracking-widest mt-1">Get an instant estimate for your project</p>
+                </div>
+                <div className="w-full min-h-[500px] relative bg-white">
+                    <Calculator />
+                </div>
+              </div>
+            </div>
+
+            {/* Column: Copy - Now on the RIGHT for desktop */}
+            <div className="w-full lg:w-[55%] text-center lg:text-left flex flex-col items-center lg:items-start order-1 lg:order-2">
                 <div className="inline-flex items-center space-x-2 bg-[#014E86] text-white px-4 py-2 rounded-sm mb-8 text-xs font-bold uppercase tracking-[0.3em] shadow-xl">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                     <span>Wilmington's Elite Installers</span>
@@ -88,19 +101,6 @@ const Home: React.FC = () => {
                         <span className="text-[10px] font-black text-[#014E86] uppercase tracking-[0.2em]">Safety & Quality Assured</span>
                     </div>
                 </div>
-            </div>
-
-            {/* Right Column: Calculator Card */}
-            <div className="w-full lg:w-[450px] shrink-0">
-              <div className="bg-white rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] overflow-hidden border border-white/10">
-                <div className="bg-stone-50 border-b border-stone-100 p-8">
-                    <h2 className="text-3xl font-heading font-black text-stone-900 uppercase tracking-tight italic">Quote Calculator</h2>
-                    <p className="text-stone-500 text-[10px] font-black uppercase tracking-widest mt-1">Get an instant estimate for your project</p>
-                </div>
-                <div className="w-full min-h-[500px] relative bg-white">
-                    <Calculator />
-                </div>
-              </div>
             </div>
 
           </div>
