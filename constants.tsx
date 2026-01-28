@@ -5,7 +5,7 @@ export const BRAND_NAME = "421Floors";
 export const LOGO_URL = "https://i.imgur.com/3EYFKM6.png";
 
 export const PHONE_NUMBER = "(910) 890-4787";
-export const EMAIL_ADDRESS = "quotes@anthonygori.com";
+export const EMAIL_ADDRESS = "421floors@gmail.com";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
