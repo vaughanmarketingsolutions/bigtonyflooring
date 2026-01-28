@@ -7,24 +7,24 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-stone-100">
       
-      <div className="bg-[#014E86] py-16">
+      <div className="bg-[#014E86] py-12 lg:py-16">
           <div className="container mx-auto px-4 text-center text-white">
-              <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Let's Get Your Floors Done</h1>
-              <p className="text-xl opacity-90">Send us a message below and Anthony will get back to you ASAP.</p>
+              <h1 className="text-3xl md:text-5xl font-heading font-bold mb-4">Let's Get Your Floors Done</h1>
+              <p className="text-lg lg:text-xl opacity-90">Send us a message below and Anthony will get back to you ASAP.</p>
           </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-10 pb-20">
+      <div className="container mx-auto px-4 -mt-10 pb-16 lg:pb-20">
         <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col lg:flex-row">
             
-            {/* Form Section - Replaced with the specific LeadConnector Iframe snippet */}
+            {/* Form Section */}
             <div className="lg:w-2/3 p-0 bg-white flex flex-col">
-                <div className="p-8 md:p-12 pb-4">
-                  <h2 className="text-2xl font-heading font-bold text-stone-800">Request a Free Estimate</h2>
-                  <p className="text-stone-500 mt-2">Fill out the details below and we'll touch base shortly.</p>
+                <div className="p-6 md:p-12 pb-4">
+                  <h2 className="text-xl md:text-2xl font-heading font-bold text-stone-800 uppercase">Request a Free Estimate</h2>
+                  <p className="text-stone-500 mt-2 text-sm">Fill out the details below and we'll touch base shortly.</p>
                 </div>
                 
-                <div className="w-full h-[750px] relative overflow-hidden px-4 md:px-8">
+                <div className="w-full h-[650px] lg:h-[750px] relative overflow-hidden px-4 md:px-8">
                   <iframe
                       src="https://api.leadconnectorhq.com/widget/form/uW5o4MLb4KvadHnnyfuU"
                       style={{ 
@@ -54,8 +54,8 @@ const Contact: React.FC = () => {
             {/* Info Sidebar */}
             <div className="lg:w-1/3 bg-stone-900 text-stone-300 p-8 md:p-12 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-stone-800">
                 <div>
-                    <h3 className="text-white font-heading font-bold text-xl mb-6 uppercase tracking-wider">Contact Info</h3>
-                    <ul className="space-y-8">
+                    <h3 className="text-white font-heading font-bold text-xl mb-6 lg:mb-8 uppercase tracking-wider">Contact Info</h3>
+                    <ul className="space-y-6 lg:space-y-8">
                         <li className="flex items-start">
                             <MapPin className="w-6 h-6 mr-4 text-[#014E86] shrink-0" />
                             <div>
@@ -74,14 +74,14 @@ const Contact: React.FC = () => {
                             <Mail className="w-6 h-6 mr-4 text-[#014E86] shrink-0" />
                             <div>
                                 <span className="block text-white font-bold mb-1">Email</span>
-                                <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-white transition-colors">{EMAIL_ADDRESS}</a>
+                                <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-white transition-colors text-sm break-all">{EMAIL_ADDRESS}</a>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div className="mt-12 bg-stone-800/50 p-6 rounded-lg">
-                    <h3 className="text-white font-heading font-bold text-xl mb-6 uppercase tracking-wider">Business Hours</h3>
+                <div className="mt-10 lg:mt-12 bg-stone-800/50 p-6 rounded-lg">
+                    <h3 className="text-white font-heading font-bold text-xl mb-4 lg:mb-6 uppercase tracking-wider">Business Hours</h3>
                     <ul className="space-y-3 text-sm">
                         <li className="flex justify-between border-b border-stone-700 pb-2">
                             <span>Monday - Friday</span>
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                 {/* Mobile Call CTA */}
                 <div className="mt-8 lg:hidden">
                     <a href={`tel:${PHONE_NUMBER}`}>
-                        <Button fullWidth variant="secondary" size="lg" className="py-5">Tap to Call Now</Button>
+                        <Button fullWidth variant="secondary" size="lg" className="py-4">Tap to Call Now</Button>
                     </a>
                 </div>
             </div>
