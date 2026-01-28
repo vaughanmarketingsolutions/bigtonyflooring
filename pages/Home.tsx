@@ -46,10 +46,11 @@ const Home: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 h-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 h-full py-12 lg:py-0">
+          {/* Changed justify-between to lg:justify-start and adjusted gap to pull form left */}
+          <div className="flex flex-col lg:flex-row items-center lg:justify-start gap-12 lg:gap-16 xl:gap-32 h-full py-12 lg:py-0">
             
             {/* Left Side: Bold Brand Messaging */}
-            <div className="w-full lg:w-3/5 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="w-full lg:w-[60%] text-center lg:text-left flex flex-col items-center lg:items-start">
                 <div className="inline-flex items-center space-x-2 bg-[#014E86] text-white px-4 py-1.5 rounded-sm mb-8 text-xs font-bold uppercase tracking-[0.25em] shadow-lg">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                     <span>Wilmington's Premier Installers</span>
@@ -95,13 +96,12 @@ const Home: React.FC = () => {
 
             {/* Right Side: Professional Integrated Lead Card */}
             <div className="w-full lg:w-[420px] shrink-0">
-              <div className="bg-white rounded-2xl shadow-[0_40px_100px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 transform lg:rotate-1 hover:rotate-0 transition-all duration-500">
+              <div className="bg-white rounded-2xl shadow-[0_40px_100px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 transition-all duration-500">
                 <div className="bg-stone-50 border-b border-stone-100 p-6">
                     <h2 className="text-2xl font-heading font-bold text-stone-900 uppercase tracking-tight">Get Your Free Quote</h2>
                     <p className="text-stone-500 text-sm mt-1">Locked in pricing, zero hidden fees.</p>
                 </div>
                 <div className="w-full h-[640px] relative bg-white">
-                    {/* Clean iframe implementation without awkward scaling */}
                     <iframe
                         src="https://api.leadconnectorhq.com/widget/form/uW5o4MLb4KvadHnnyfuU"
                         style={{ 
