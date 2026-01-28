@@ -59,10 +59,10 @@ const Home: React.FC = () => {
                   Right.
                 </h1>
                 <p className="text-xl md:text-2xl xl:text-3xl text-stone-100 mb-10 max-w-xl leading-relaxed font-light drop-shadow-lg">
-                  Anthony Gori brings elite skill, rapid turnaround, and crystal-clear pricing to every Wilmington home.
+                  {BRAND_NAME} brings elite skill, rapid turnaround, and crystal-clear pricing to every Wilmington home.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-5 mb-10 w-full lg:w-auto">
-                  <Link to="/services" className="w-full sm:w-auto">
+                  <Link to="/wilmington-flooring-services" className="w-full sm:w-auto">
                     <Button size="xl" className="w-full px-12 py-5 shadow-2xl">Browse Services</Button>
                   </Link>
                   <a href={`tel:${PHONE_NUMBER}`} className="w-full sm:w-auto">
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
                         <service.icon className="w-16 h-16 text-stone-200 group-hover:text-[#014E86] mb-8 transition-colors" />
                         <h3 className="font-bold font-heading text-3xl mb-4 uppercase tracking-tighter">{service.title}</h3>
                         <p className="text-stone-500 mb-8 leading-relaxed flex-grow text-lg">{service.shortDesc}</p>
-                        <Link to="/services" className="text-[#014E86] font-bold text-sm tracking-widest flex items-center group-hover:translate-x-2 transition-transform">
+                        <Link to="/wilmington-flooring-services" className="text-[#014E86] font-bold text-sm tracking-widest flex items-center group-hover:translate-x-2 transition-transform">
                             SEE DETAILS <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </div>
@@ -253,7 +253,7 @@ const Home: React.FC = () => {
           <h2 className="text-6xl md:text-8xl font-heading font-bold text-white mb-10 drop-shadow-2xl uppercase tracking-tighter leading-none italic">Quality is Never <br/> an Accident.</h2>
           <p className="text-blue-100 text-2xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">Upgrade your home with floors that stand the test of time. Professional install. Zero Stress.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-10">
-               <Link to="/contact">
+               <Link to="/contact-for-free-flooring-estimate">
                   <Button size="xl" variant="secondary" className="px-16 py-7 text-2xl shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:scale-105">Get Free Quote</Button>
               </Link>
               <a href={`tel:${PHONE_NUMBER}`}>

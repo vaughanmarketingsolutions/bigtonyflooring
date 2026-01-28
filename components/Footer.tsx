@@ -49,10 +49,10 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {SERVICES.map(service => (
                 <li key={service.id}>
-                  <Link to="/services" className="hover:text-[#014E86] transition-colors">{service.title}</Link>
+                  <Link to="/wilmington-flooring-services" className="hover:text-[#014E86] transition-colors">{service.title}</Link>
                 </li>
               ))}
-              <li><Link to="/services" className="hover:text-[#014E86] transition-colors">Floor Removal & Repair</Link></li>
+              <li><Link to="/wilmington-flooring-services" className="hover:text-[#014E86] transition-colors">Floor Removal & Repair</Link></li>
             </ul>
           </div>
 

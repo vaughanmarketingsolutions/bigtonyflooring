@@ -19,7 +19,7 @@ const About: React.FC = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
                         <p className="text-white font-heading font-bold text-3xl">Tony Gori</p>
-                        <p className="text-stone-300 text-lg">Owner of 421Floors</p>
+                        <p className="text-stone-300 text-lg">Owner of {BRAND_NAME}</p>
                     </div>
                 </div>
                 {/* Decorative Pattern */}
@@ -46,7 +46,7 @@ const About: React.FC = () => {
                 <div className="bg-stone-900 text-white p-8 rounded-lg text-center mb-10">
                     <p className="font-heading font-bold text-2xl mb-4">"Quality floors, every single time."</p>
                     <p className="text-stone-400 mb-6 italic">We stand behind every plank, tile, and board we lay. Your home is your biggest investment, and we treat it that way.</p>
-                    <Link to="/contact">
+                    <Link to="/contact-for-free-flooring-estimate">
                         <Button variant="secondary" fullWidth className="text-lg py-4">Hire The Professionals</Button>
                     </Link>
                 </div>

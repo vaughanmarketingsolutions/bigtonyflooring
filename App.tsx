@@ -26,10 +26,10 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/wilmington-flooring-services" element={<Services />} />
+            <Route path="/flooring-installation-gallery" element={<Gallery />} />
+            <Route path="/about-421floors-wilmington" element={<About />} />
+            <Route path="/contact-for-free-flooring-estimate" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

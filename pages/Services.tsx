@@ -60,7 +60,7 @@ const Services: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-end border-t border-stone-100 pt-6 mt-auto">
-                    <Link to="/contact">
+                    <Link to="/contact-for-free-flooring-estimate">
                         <Button variant="outline" size="sm" className="group">
                             Get Quote <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
@@ -76,7 +76,7 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-4 mt-20 text-center">
         <h3 className="text-2xl font-bold mb-6 text-stone-800">Need something custom? Removal? Repairs?</h3>
         <p className="text-stone-600 mb-8">We also handle floor leveling, subfloor repair, and baseboard installation.</p>
-        <Link to="/contact"><Button>Talk to the team</Button></Link>
+        <Link to="/contact-for-free-flooring-estimate"><Button>Talk to the team</Button></Link>
       </div>
     </div>
   );

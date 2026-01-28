@@ -1,7 +1,7 @@
 import { Hammer, Layers, Grid3X3, Grid2X2 } from 'lucide-react';
 import { Service, Testimonial, GalleryItem, NavItem } from './types';
 
-export const BRAND_NAME = "Anthony Gori";
+export const BRAND_NAME = "421Floors";
 export const LOGO_URL = "https://i.imgur.com/3EYFKM6.png";
 
 export const PHONE_NUMBER = "(910) 890-4787";
@@ -9,10 +9,10 @@ export const EMAIL_ADDRESS = "quotes@anthonygori.com";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Services', path: '/services' },
-  { label: 'Gallery', path: '/gallery' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Services', path: '/wilmington-flooring-services' },
+  { label: 'Gallery', path: '/flooring-installation-gallery' },
+  { label: 'About Us', path: '/about-421floors-wilmington' },
+  { label: 'Contact', path: '/contact-for-free-flooring-estimate' },
 ];
 
 export const SERVICES: Service[] = [
@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
     id: 'hardwood',
     title: 'Hardwood Installation',
     shortDesc: 'Classic, durable, and timeless real wood floors.',
-    fullDesc: 'Nothing beats the warmth and value of real hardwood. Whether it’s solid oak, maple, or walnut, Anthony Gori installs it with precision, ensuring proper acclimation and a finish that lasts generations.',
+    fullDesc: 'Nothing beats the warmth and value of real hardwood. Whether it’s solid oak, maple, or walnut, 421Floors installs it with precision, ensuring proper acclimation and a finish that lasts generations.',
     benefits: ['Increases home value', 'Can be refinished', 'Timeless aesthetic'],
     priceRange: '$$-$$$',
     image: 'https://i.imgur.com/CkoeAfW.png',
