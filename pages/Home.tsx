@@ -45,9 +45,10 @@ const Home: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-12 lg:gap-16 xl:gap-24 py-12 lg:py-0">
+          {/* Centered Flex Container */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 xl:gap-20 py-12 lg:py-0 max-w-7xl mx-auto">
             
-            {/* Column: Calculator Card - Now on the LEFT for desktop */}
+            {/* Column: Calculator Card - Left Aligned in the Center Block */}
             <div className="w-full lg:w-[450px] shrink-0 order-2 lg:order-1">
               <div className="bg-white rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] overflow-hidden border border-white/10">
                 <div className="bg-stone-50 border-b border-stone-100 p-8">
@@ -60,20 +61,20 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Column: Copy - Now on the RIGHT for desktop */}
-            <div className="w-full lg:w-[55%] text-center lg:text-left flex flex-col items-center lg:items-start order-1 lg:order-2">
+            {/* Column: Copy - Right Aligned in the Center Block */}
+            <div className="w-full lg:w-[500px] xl:w-[600px] text-center lg:text-left flex flex-col items-center lg:items-start order-1 lg:order-2">
                 <div className="inline-flex items-center space-x-2 bg-[#014E86] text-white px-4 py-2 rounded-sm mb-8 text-xs font-bold uppercase tracking-[0.3em] shadow-xl">
                     <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                     <span>Wilmington's Elite Installers</span>
                 </div>
                 
-                <h1 className="text-6xl md:text-8xl lg:text-[110px] xl:text-[130px] font-heading font-black leading-[0.8] mb-8 text-white uppercase tracking-tighter italic">
+                <h1 className="text-6xl md:text-8xl lg:text-[100px] xl:text-[120px] font-heading font-black leading-[0.8] mb-8 text-white uppercase tracking-tighter italic">
                   Floors <br/>
                   <span className="text-[#014E86] not-italic">Done</span> <br/>
                   Right.
                 </h1>
                 
-                <p className="text-xl md:text-2xl lg:text-3xl text-stone-300 mb-10 max-w-2xl leading-tight font-light">
+                <p className="text-xl md:text-2xl text-stone-300 mb-10 leading-tight font-light">
                   <span className="text-white font-bold">{BRAND_NAME}</span> delivers master-level installation, veteran craftsmanship, and honesty you can trust.
                 </p>
                 
