@@ -1,4 +1,4 @@
-import { Hammer, Layers, Grid3X3, Grid2X2 } from 'lucide-react';
+import { Hammer, Layers, Grid3X3, Grid2X2, Cloud } from 'lucide-react';
 import { Service, Testimonial, GalleryItem, NavItem } from './types';
 
 export const BRAND_NAME = "421Floors";
@@ -35,6 +35,16 @@ export const SERVICES: Service[] = [
     priceRange: '$-$$',
     image: 'https://i.imgur.com/s5VQyVZ.png',
     icon: Layers,
+  },
+  {
+    id: 'carpet',
+    title: 'Carpet Installation',
+    shortDesc: 'Soft, quiet, and comfortable for bedrooms and lounges.',
+    fullDesc: 'Premium carpet installation for a cozy home environment. We handle stretching, tack strips, and padding to ensure a wrinkle-free finish that feels like walking on a cloud.',
+    benefits: ['Excellent sound insulation', 'Comfortable and warm', 'Cost-effective'],
+    priceRange: '$',
+    image: 'https://i.imgur.com/pC9iZmc.png',
+    icon: Cloud,
   },
   {
     id: 'lvt',

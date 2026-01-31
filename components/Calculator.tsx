@@ -12,6 +12,7 @@ const Calculator: React.FC = () => {
   const rates: Record<string, number> = {
     hardwood: 4,
     lvp: 2,
+    carpet: 2,
     lvt: 3,
     tile: 10,
   };

@@ -147,11 +147,11 @@ const Home: React.FC = () => {
                 <p className="text-stone-500 max-w-xl mx-auto text-lg font-medium uppercase tracking-tight">High-end craftsmanship. No shortcuts.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                 {SERVICES.map((service) => (
                     <div key={service.id} className="bg-white p-12 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-300 border-b-[10px] border-transparent hover:border-[#014E86] group cursor-pointer flex flex-col">
                         <service.icon className="w-12 h-12 text-stone-200 group-hover:text-[#014E86] mb-8 transition-colors" />
-                        <h3 className="font-black font-heading text-4xl mb-4 uppercase tracking-tighter italic">{service.title}</h3>
+                        <h3 className="font-black font-heading text-3xl mb-4 uppercase tracking-tighter italic">{service.title}</h3>
                         <p className="text-stone-500 mb-8 leading-tight flex-grow text-lg font-medium">{service.shortDesc}</p>
                         <Link to="/wilmington-flooring-services" className="text-[#014E86] font-black text-sm tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform uppercase">
                             View Specs <ArrowRight className="w-5 h-5 ml-2" />

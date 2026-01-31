@@ -39,7 +39,7 @@ const About: React.FC = () => {
                         Established right here in Wilmington, <strong>{BRAND_NAME}</strong> was built because we were tired of seeing homeowners get ripped off by big box stores that send unqualified subcontractors to do a rush job.
                     </p>
                     <p>
-                        When you hire us, you don't get a salesman. You get experts. We specialize in the stuff that lasts: Hardwood, LVP, LVT, and Tile. We treat your subfloor with the respect it deserves, ensuring a foundation that lasts decades.
+                        When you hire us, you don't get a salesman. You get experts. We specialize in the stuff that lasts: Hardwood, LVP, Carpet, LVT, and Tile. We treat your subfloor with the respect it deserves, ensuring a foundation that lasts decades.
                     </p>
                 </div>
 
